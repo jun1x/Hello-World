@@ -1,5 +1,7 @@
-#include <iostream>
+#include <memory>
+#include "GitHubWorld.h"
 
 int main() {
-  std::cout << "Hello GitHub!" << std::endl;
+    std::unique_ptr<World> gitHubWorld = std::make_unique<GitHubWorld>();
+    gitHubWorld->greet();
 }
