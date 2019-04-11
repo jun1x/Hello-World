@@ -38,21 +38,21 @@ all: $(EXE)
 # Compiling the source code and generating object files
 #   
 %.o: %.cpp $(HEADERS) 
-    @echo "Compile : " $< " and generate object :" $@
-    $(CXX) -c $(CXXFLAGS) $< 
-    
+	@echo "Compile : " $< " and generate object :" $@
+	$(CXX) -c $(CXXFLAGS) $< 
+
 #
 # Linking objects into an executable
 #
 $(EXE): $(OBJECTS)    
-    @echo "Link object : " $^ " into executable :" $@
-    $(CXX) $^ $(LDFLAGS) -o $@
+	@echo "Link object : " $^ " into executable :" $@
+	$(CXX) $^ $(LDFLAGS) -o $@
 
 #
 # Clean development environment by removing objects and executable file
 # while suppressing print and possible errors
 #
 clean:
-@echo "Removing  executable and .o files"
-@rm -f *.o $(EXE)
+	@echo "Removing  executable and .o files"
+	@rm -f *.o $(EXE)
 
